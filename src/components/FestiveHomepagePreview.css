@@ -1,0 +1,356 @@
+/* ==========================================================================
+   PEARL LIGHTING — FESTIVE HOMEPAGE PREVIEW
+   Clean, Editorial Luxury Presentation (Zero 3D clutter)
+   ========================================================================== */
+
+.as-festive-preview-root {
+  position: relative;
+  background: linear-gradient(180deg, #FBF8F3 0%, #F5EFE4 100%);
+  color: #171717;
+  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+  border-top: 1px solid rgba(198, 154, 82, 0.22);
+  border-bottom: 1px solid rgba(198, 154, 82, 0.22);
+  overflow: hidden;
+}
+
+.as-festive-preview-ambient-glow {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(198, 154, 82, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.as-festive-preview-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3.5vw, 3rem);
+  position: relative;
+  z-index: 1;
+}
+
+/* Eyebrow Row */
+.as-festive-preview-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.as-festive-sparkle {
+  color: #C69A52;
+  font-size: 0.85rem;
+}
+
+.as-festive-eyebrow-text {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8C6629;
+}
+
+.as-festive-eyebrow-line {
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(198, 154, 82, 0.35) 0%, transparent 100%);
+}
+
+/* Main Layout Grid */
+.as-festive-preview-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+@media (max-width: 960px) {
+  .as-festive-preview-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Visual Stage */
+.as-festive-preview-visual-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.as-festive-preview-hero-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #EDE8DE;
+  border: 1px solid rgba(198, 154, 82, 0.3);
+  box-shadow: 0 16px 40px rgba(78, 62, 40, 0.08);
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.as-festive-preview-hero-frame:hover {
+  transform: translateY(-3px);
+  border-color: rgba(198, 154, 82, 0.6);
+  box-shadow: 0 20px 48px rgba(198, 154, 82, 0.18);
+}
+
+.as-festive-preview-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.as-festive-preview-hero-frame:hover .as-festive-preview-hero-img {
+  transform: scale(1.03);
+}
+
+.as-festive-hero-overlay-tag {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(23, 23, 23, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #F7F4ED;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(198, 154, 82, 0.4);
+}
+
+.as-tag-spark {
+  color: #D8B475;
+}
+
+/* Supporting Accents Row */
+.as-festive-preview-accents-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.as-festive-accent-card {
+  position: relative;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(198, 154, 82, 0.22);
+  background-color: #171717;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.as-festive-accent-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(198, 154, 82, 0.5);
+}
+
+.as-festive-accent-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.88;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+.as-festive-accent-card:hover .as-festive-accent-img {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.as-accent-caption {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.65rem;
+  right: 0.65rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+  letter-spacing: 0.02em;
+}
+
+/* Copy Stage */
+.as-festive-preview-copy-stage {
+  display: flex;
+  flex-direction: column;
+}
+
+.as-festive-collection-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #8C6629;
+  margin-bottom: 0.75rem;
+}
+
+.as-kicker-dot {
+  color: #C69A52;
+}
+
+.as-festive-preview-headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #171717;
+  margin: 0 0 0.65rem;
+  letter-spacing: -0.01em;
+}
+
+.as-festive-preview-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-style: italic;
+  font-weight: 500;
+  color: #8C6629;
+  line-height: 1.35;
+  margin: 0 0 1rem;
+}
+
+.as-festive-preview-body {
+  font-size: clamp(0.92rem, 1.1vw, 1rem);
+  line-height: 1.65;
+  color: #4A463F;
+  margin: 0 0 1.75rem;
+}
+
+/* Features List */
+.as-festive-preview-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+  padding: 1.1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(198, 154, 82, 0.22);
+  border-radius: 12px;
+}
+
+.as-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.as-feature-spark {
+  color: #C69A52;
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+}
+
+.as-feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.as-feature-text strong {
+  font-size: 0.85rem;
+  color: #171717;
+  font-weight: 600;
+}
+
+.as-feature-text span {
+  font-size: 0.78rem;
+  color: #6C665C;
+}
+
+/* Actions Row */
+.as-festive-preview-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.as-btn-explore-festive-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #171717;
+  color: #F7F4ED;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(198, 154, 82, 0.4);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 20px rgba(23, 23, 23, 0.15);
+}
+
+.as-btn-explore-festive-main:hover {
+  background: #2D2823;
+  color: #FFFFFF;
+  border-color: rgba(198, 154, 82, 0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(198, 154, 82, 0.25);
+}
+
+.as-btn-explore-festive-main .as-btn-arrow-icon {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.as-btn-explore-festive-main:hover .as-btn-arrow-icon {
+  transform: translateX(3px);
+}
+
+.as-btn-festive-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(198, 154, 82, 0.12);
+  color: #C69A52;
+  border: 1px solid rgba(198, 154, 82, 0.35);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.85rem 1.35rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.as-btn-festive-wa:hover {
+  background: #C69A52;
+  color: #12100E;
+  border-color: #C69A52;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(198, 154, 82, 0.35);
+}
+
+.as-btn-festive-wa:focus-visible {
+  outline: 2px solid #C69A52;
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .as-festive-preview-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .as-btn-explore-festive-main,
+  .as-btn-festive-wa {
+    justify-content: center;
+    width: 100%;
+  }
+}

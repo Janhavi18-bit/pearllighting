@@ -1,0 +1,1793 @@
+/* ==========================================================================
+   PEARL LIGHTING — FESTIVE LIGHTING EXPERIENCE
+   - Integrated architectural luxury exhibition salon
+   - Warm champagne (#FAF5EE), soft ivory, subtle walnut accents, champagne gold (#C99B45)
+   - Zero dark-brown box or black room appearance
+   - Original festive Indian balcony photograph preserved with zero CSS filters
+   - Seamless transition into 3D salon exhibition
+   - Refined, light champagne / translucent ivory HUD dock with 10-product thumbnails
+   - Fully responsive across desktop, tablet, and mobile
+   ========================================================================== */
+
+:root {
+  --as-3d-bg: #FAF5EE;
+  --as-3d-surface: rgba(250, 247, 242, 0.94);
+  --as-3d-surface-hover: rgba(245, 239, 230, 0.98);
+  --as-3d-border: rgba(197, 160, 89, 0.32);
+  --as-3d-border-bright: rgba(197, 160, 89, 0.65);
+  --as-3d-gold: #C99B45;
+  --as-3d-gold-warm: #9E7D3B;
+  --as-3d-text-primary: #1A1612;
+  --as-3d-text-muted: #5D5447;
+  --as-site-ivory: #FAF7F2;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   0. PARENT WRAPPER — SEAMLESSLY BLENDED INTO SITE
+   ────────────────────────────────────────────────────────────────────────── */
+.as-festive-cinematic-page {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  color: var(--as-3d-text-primary);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.as-festive-cinematic-page.as-in-gallery-mode {
+  background: transparent;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   BOUNDED CENTRED CONTENT SHELL — WIDE, INTEGRATED COMPOSITION
+   ────────────────────────────────────────────────────────────────────────── */
+.as-festive-bounded-shell {
+  width: 100%;
+  /* Match the centered product-card content width above this section. */
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   STAGE 1: OUTER FESTIVE STAGE & BALANCED SPLIT CARD
+   ────────────────────────────────────────────────────────────────────────── */
+.as-festive-outer-stage {
+  width: 100%;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.as-festive-outer-stage.as-stage-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+.as-festive-outer-stage.as-stage-inactive {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: clamp(1rem, 2.5vw, 2.5rem);
+  right: clamp(1rem, 2.5vw, 2.5rem);
+  z-index: 1;
+}
+
+.as-festive-outer-card {
+  position: relative;
+  width: 100%;
+  height: clamp(420px, 50vh, 500px);
+  min-height: 400px;
+  border-radius: 20px;
+  border: 1px solid rgba(198, 154, 82, 0.42);
+  box-shadow: 0 24px 60px -15px rgba(22, 14, 9, 0.30), 0 0 35px rgba(198, 154, 82, 0.14);
+  overflow: hidden;
+  background: #21130D;
+}
+
+@media (min-width: 768px) {
+  .as-festive-outer-stage {
+    isolation: isolate;
+  }
+
+  /* Do not add a separate brown band behind the festive hero card. */
+  .as-festive-outer-stage::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -0.75rem;
+    bottom: -0.75rem;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background: transparent;
+  }
+
+  .as-festive-outer-card {
+    width: 100%;
+    height: 560px;
+    min-height: 0;
+    margin-inline: auto;
+  }
+
+  .as-festive-outer-original-img {
+    object-fit: cover;
+    object-position: center 46%;
+  }
+}
+
+@media (max-width: 767px) {
+  .as-festive-m-stage-outer {
+    margin: -0.25rem -0.85rem;
+    padding: 0.5rem 0.85rem;
+    background: #21130D;
+  }
+
+  .as-festive-m-outer-card {
+    min-height: 400px;
+    aspect-ratio: 0.95 / 1;
+  }
+}
+
+/* Full-Width Background Visual Frame */
+.as-festive-outer-visual-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #21130D;
+  z-index: 1;
+}
+
+/* Smooth Readability Gradient: deep warm brown at left, fading to transparent towards center/right */
+.as-festive-outer-visual-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(20, 13, 8, 0.94) 0%,
+    rgba(20, 13, 8, 0.84) 30%,
+    rgba(20, 13, 8, 0.52) 52%,
+    rgba(20, 13, 8, 0.12) 75%,
+    transparent 92%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.as-festive-outer-original-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  display: block;
+  filter: none !important;
+  -webkit-filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Left Column: Seamless Text Overlay directly over the left side of the image */
+.as-festive-outer-copy {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 560px;
+  height: 100%;
+  padding: clamp(2.25rem, 4.5vw, 4rem);
+  background: transparent;
+}
+
+.as-festive-outer-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.32rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(198, 154, 82, 0.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(198, 154, 82, 0.48);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #F7D59A;
+  margin-bottom: 0.85rem;
+  width: fit-content;
+}
+
+.as-kicker-spark {
+  color: #F0C77D;
+  font-size: 0.75rem;
+}
+
+.as-festive-outer-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.2rem, 3.6vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: #FAF7F2;
+  margin: 0 0 0.75rem;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.40);
+}
+
+.as-festive-outer-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: #F0C77D;
+}
+
+.as-festive-outer-desc {
+  font-size: clamp(0.86rem, 1vw, 0.96rem);
+  line-height: 1.6;
+  color: #E6DFD5;
+  max-width: 440px;
+  margin: 0 0 1.65rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+.as-festive-outer-cta {
+  display: flex;
+  align-items: center;
+}
+
+/* Explore Festive Lights CTA Button */
+.as-btn-explore-festive {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: 9999px;
+  background: #C69A52;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 20px rgba(198, 154, 82, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.as-btn-explore-festive:hover {
+  background: #D9AB61;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.42), 0 0 28px rgba(198, 154, 82, 0.50);
+  color: #FFFFFF;
+}
+
+.as-btn-arrow-icon {
+  font-size: 0.85rem;
+  transition: transform 0.25s ease;
+}
+
+.as-btn-explore-festive:hover .as-btn-arrow-icon {
+  transform: translateX(3px);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   STAGE 2: 3D SALON STAGE & HUD PRODUCT DISCOVERY
+   Luminous champagne-and-amber exhibition salon
+   ────────────────────────────────────────────────────────────────────────── */
+.as-festive-3d-stage-viewport {
+  position: relative;
+  width: 100%;
+  height: clamp(580px, 72vh, 740px);
+  min-height: 540px;
+  overflow: hidden;
+  background: #FAF5EE;
+  border-radius: 18px;
+  border: 1px solid rgba(198, 154, 82, 0.40);
+  box-shadow: 0 28px 70px -15px rgba(56, 35, 23, 0.16), 0 0 50px rgba(198, 154, 82, 0.14);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.as-festive-3d-stage-viewport.as-stage-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+.as-festive-3d-stage-viewport.as-stage-inactive {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: clamp(1rem, 2.5vw, 2.5rem);
+  right: clamp(1rem, 2.5vw, 2.5rem);
+  z-index: 1;
+}
+
+.as-festive-3d-scene-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.as-festive-3d-webgl-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Spatial HUD Overlay */
+.as-gallery-spatial-hud {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(0.75rem, 1.8vw, 1.25rem);
+}
+
+/* Top Bar: Compact Refined Light-Champagne / Translucent Ivory Glass */
+.as-hud-top-bar {
+  width: 100%;
+  pointer-events: auto;
+}
+
+.as-hud-top-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(250, 247, 242, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 160, 89, 0.32);
+  border-radius: 9999px;
+  padding: 0.45rem 1.10rem;
+  box-shadow: 0 4px 16px rgba(110, 95, 75, 0.06);
+}
+
+.as-hud-return-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(26, 22, 18, 0.05);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  color: #1A1612;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.as-hud-return-btn:hover {
+  background: #C99B45;
+  color: #FAF7F2;
+  border-color: #C99B45;
+  transform: translateX(-2px);
+}
+
+.as-return-arrow {
+  font-size: 0.85rem;
+}
+
+.as-hud-center-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #1A1612;
+  text-transform: uppercase;
+}
+
+.as-hud-sparkle {
+  color: #9E7D3B;
+}
+
+/* Top Right Navigation Group */
+.as-hud-top-right-group {
+  display: flex;
+  align-items: center;
+  gap: 0.50rem;
+}
+
+.as-hud-atmosphere-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.40rem;
+  background: rgba(26, 22, 18, 0.05);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  color: #1A1612;
+  font-size: 0.70rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.80rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.as-hud-atmosphere-btn:hover,
+.as-hud-atmosphere-btn.active {
+  background: rgba(197, 160, 89, 0.22);
+  border-color: #C99B45;
+  color: #1A1612;
+}
+
+/* Category Filter Tabs */
+.as-hud-filter-rail {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(197, 160, 89, 0.12);
+  border-radius: 9999px;
+  padding: 0.18rem;
+  border: 1px solid rgba(197, 160, 89, 0.28);
+}
+
+.as-hud-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #5D5447;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.30rem 0.65rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.as-hud-tab:hover {
+  color: #1A1612;
+}
+
+.as-hud-tab.active {
+  background: #1A1612;
+  border-color: #1A1612;
+  color: #FAF7F2;
+  box-shadow: 0 1px 6px rgba(26, 22, 18, 0.15);
+}
+
+/* Atmospheric References Strip */
+.as-hud-atmosphere-strip {
+  margin-top: 0.65rem;
+  background: rgba(250, 247, 242, 0.96);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 12px 32px rgba(110, 95, 75, 0.12);
+  pointer-events: auto;
+  animation: asAtmosphereFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes asAtmosphereFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.as-atmosphere-strip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.20);
+  padding-bottom: 0.45rem;
+}
+
+.as-atmosphere-strip-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #8E6B2D;
+}
+
+.as-atmosphere-strip-close {
+  background: transparent;
+  border: none;
+  color: #5D5447;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 0.3rem;
+  transition: color 0.2s ease;
+}
+
+.as-atmosphere-strip-close:hover {
+  color: #1A1612;
+}
+
+.as-atmosphere-strip-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.65rem;
+}
+
+.as-atmosphere-strip-card {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.60);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: 8px;
+  padding: 0.40rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.as-atmosphere-strip-card:hover {
+  background: rgba(197, 160, 89, 0.15);
+  border-color: #C99B45;
+  transform: translateY(-1px);
+}
+
+.as-atmosphere-strip-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #21130D;
+}
+
+.as-atmosphere-img-clean {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.as-atmosphere-strip-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.as-atmosphere-strip-badge {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8E6B2D;
+}
+
+.as-atmosphere-strip-name {
+  font-size: 0.70rem;
+  font-weight: 600;
+  color: #1A1612;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   BOTTOM DOCK: ONE PRODUCT AT A TIME + THUMBNAILS & STEPPER
+   Light champagne / translucent ivory surfaces with excellent contrast
+   ────────────────────────────────────────────────────────────────────────── */
+.as-hud-bottom-dock {
+  width: 100%;
+  pointer-events: auto;
+}
+
+.as-hud-dock-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Focused Product Card in HUD — Compact, Refined Translucent Ivory Surface */
+.as-hud-product-card {
+  background: rgba(250, 247, 242, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 160, 89, 0.30);
+  border-radius: 12px;
+  padding: 0.65rem 1.15rem;
+  box-shadow: 0 6px 20px rgba(110, 95, 75, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 1.10rem;
+  min-width: 0;
+  max-width: fit-content;
+  box-sizing: border-box;
+}
+
+.as-hud-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-right: 1px solid rgba(197, 160, 89, 0.28);
+  padding-right: 1.15rem;
+  flex-shrink: 0;
+}
+
+.as-hud-card-badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8E6B2D;
+}
+
+.as-hud-card-num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #1A1612;
+}
+
+.as-hud-card-titles {
+  flex: 0 1 auto;
+  min-width: 120px;
+  max-width: 260px;
+}
+
+.as-hud-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.50rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.15rem;
+}
+
+.as-hud-card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1A1612;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.as-hud-craft-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.14rem 0.50rem;
+  border-radius: 9999px;
+  background: rgba(197, 160, 89, 0.15);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #8E6B2D;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.as-hud-card-subtitle {
+  font-size: 0.78rem;
+  color: #5D5447;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Spec Pill */
+.as-hud-spec-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(197, 160, 89, 0.12);
+  border: 1px solid rgba(197, 160, 89, 0.30);
+  padding: 0.28rem 0.72rem;
+  border-radius: 9999px;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 220px;
+}
+
+.as-spec-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #9E7D3B;
+  flex-shrink: 0;
+}
+
+.as-spec-pill-text {
+  font-size: 0.70rem;
+  font-weight: 600;
+  color: #1A1612;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Card Actions */
+.as-hud-card-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.as-hud-card-actions > .email-enquiry-wrap { flex: 1 1 120px; }
+
+.as-hud-btn-inspect {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.90rem;
+  border-radius: 9999px;
+  background: rgba(26, 22, 18, 0.05);
+  border: 1px solid rgba(197, 160, 89, 0.38);
+  color: #1A1612;
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.as-hud-btn-inspect:hover {
+  background: #C99B45;
+  color: #FAF7F2;
+  border-color: #C99B45;
+  transform: translateY(-1px);
+}
+
+/* WhatsApp CTA Button */
+.as-hud-btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.90rem;
+  border-radius: 9999px;
+  background: #1E6B38;
+  border: 1px solid #278546;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.74rem;
+  font-weight: 600;
+  box-shadow: 0 3px 12px rgba(30, 107, 56, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.as-hud-btn-wa:hover {
+  background: #248043;
+  transform: translateY(-1px);
+}
+
+/* Navigation Stepper & 10 Product Thumbnails Cluster */
+.as-hud-navigation-cluster {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.50rem;
+  flex-shrink: 0;
+}
+
+.as-hud-stepper-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.as-hud-stepper-btn {
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.30);
+  color: #1A1612;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.40rem 0.85rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 12px rgba(110, 95, 75, 0.06);
+}
+
+.as-hud-stepper-btn:hover {
+  border-color: #C99B45;
+  background: rgba(197, 160, 89, 0.20);
+  transform: translateY(-1px);
+  color: #1A1612;
+}
+
+/* 10 Clickable Product Thumbnails Rail */
+.as-hud-thumbnails-rail {
+  display: flex;
+  align-items: center;
+  gap: 0.28rem;
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 0.28rem 0.48rem;
+  border-radius: 10px;
+  border: 1px solid rgba(197, 160, 89, 0.28);
+  box-shadow: 0 4px 16px rgba(110, 95, 75, 0.06);
+  max-width: 100%;
+}
+
+.as-hud-thumb-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 2.5px;
+  border-radius: 8px;
+  border: 1.5px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.as-hud-thumb-btn:hover {
+  border-color: rgba(201, 155, 69, 0.6);
+  background: rgba(201, 155, 69, 0.15);
+  transform: translateY(-1px);
+}
+
+.as-hud-thumb-btn.active {
+  border-color: #C99B45;
+  background: rgba(201, 155, 69, 0.25);
+  box-shadow: 0 0 0 2px #C99B45;
+  transform: translateY(-1px);
+}
+
+.as-hud-thumb-btn.dimmed {
+  opacity: 0.35;
+}
+
+.as-thumb-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+.as-thumb-label {
+  font-size: 0.55rem;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #5D5447;
+  transition: color 0.2s ease;
+}
+
+.as-hud-thumb-btn.active .as-thumb-label {
+  color: #8E6B2D;
+  font-weight: 800;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   ATMOSPHERIC VISUAL INSPECTION LIGHTBOX
+   ────────────────────────────────────────────────────────────────────────── */
+.as-atmosphere-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(14, 10, 6, 0.80);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: asLightboxFadeIn 0.22s ease;
+}
+
+@keyframes asLightboxFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.as-atmosphere-lightbox-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(250, 246, 238, 0.98) 100%);
+  border-radius: 18px;
+  border: 1px solid rgba(197, 160, 89, 0.38);
+  box-shadow: 0 24px 64px rgba(56, 35, 23, 0.20);
+  max-width: 660px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.45rem;
+  animation: asLightboxScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes asLightboxScaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.as-atmosphere-lightbox-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.as-atmosphere-role-badge {
+  display: inline-block;
+  font-size: 0.60rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8E6B2D;
+  margin-bottom: 0.2rem;
+}
+
+.as-atmosphere-lightbox-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.40rem;
+  font-weight: 600;
+  color: #1A1612;
+  margin: 0;
+}
+
+.as-atmosphere-close-btn {
+  background: rgba(26, 22, 18, 0.06);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #1A1612;
+  transition: all 0.2s ease;
+}
+
+.as-atmosphere-close-btn:hover {
+  background: #C99B45;
+  color: #FAF7F2;
+}
+
+.as-atmosphere-lightbox-media {
+  width: 100%;
+  max-height: 52vh;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #21130D;
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.as-atmosphere-lightbox-img {
+  width: 100%;
+  height: auto;
+  max-height: 52vh;
+  object-fit: contain;
+  display: block;
+  filter: none !important;
+  -webkit-filter: none !important;
+  opacity: 1 !important;
+}
+
+.as-atmosphere-lightbox-note {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #5D5447;
+  margin: 0;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   VIEW SWITCHING: DESKTOP 3D EXPERIENCE vs DEDICATED MOBILE SHOWCASE
+   ────────────────────────────────────────────────────────────────────────── */
+.as-festive-desktop-view {
+  display: block;
+  width: 100%;
+}
+
+.as-festive-mobile-view {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .as-festive-desktop-view {
+    display: none !important;
+  }
+
+  .as-festive-mobile-view {
+    display: block !important;
+    width: 100%;
+    background: transparent;
+    color: #29231F;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   DEDICATED LUXURY MOBILE EXPERIENCE (< 768px)
+   Warm ivory (#F7F4ED), Champagne Gold (#C69A52), Deep Warm Brown (#382317)
+   ────────────────────────────────────────────────────────────────────────── */
+.as-festive-m-container {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 0.25rem 0.85rem 1.25rem;
+  box-sizing: border-box;
+}
+
+@keyframes asMobileFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   MOBILE STAGE 1: Outer Festive Overview Card
+   ────────────────────────────────────────────────────────────────────────── */
+.as-festive-m-stage-outer {
+  width: 100%;
+  animation: asMobileFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.as-festive-m-outer-card {
+  position: relative;
+  background: #21130D;
+  border: 1px solid rgba(198, 154, 82, 0.40);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 40px -10px rgba(22, 14, 9, 0.35), 0 0 25px rgba(198, 154, 82, 0.12);
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.as-festive-m-outer-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #21130D;
+}
+
+.as-festive-m-outer-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 13, 8, 0.25) 0%,
+    rgba(20, 13, 8, 0.55) 35%,
+    rgba(20, 13, 8, 0.94) 85%,
+    rgba(20, 13, 8, 0.98) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.as-festive-m-outer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+.as-festive-m-outer-copy {
+  position: relative;
+  z-index: 3;
+  padding: 1.85rem 1.35rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.as-festive-m-outer-cta {
+  margin-top: 1rem;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   MOBILE STAGE 2: Dedicated Product Gallery Showcase
+   ────────────────────────────────────────────────────────────────────────── */
+.as-festive-m-stage-gallery {
+  width: 100%;
+  animation: asMobileFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Top Navigation Bar with Prominent "← Back to Overview" Sign */
+.as-festive-m-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding: 0 0.15rem;
+}
+
+.as-festive-m-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(198, 154, 82, 0.38);
+  color: #382317;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.40rem 0.85rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(56, 35, 23, 0.08);
+  transition: all 0.2s ease;
+}
+
+.as-festive-m-back-btn:hover {
+  background: #C69A52;
+  color: #FFFFFF;
+  border-color: #C69A52;
+  transform: translateX(-2px);
+}
+
+.as-festive-m-top-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.60rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #C69A52;
+  background: rgba(198, 154, 82, 0.10);
+  border: 1px solid rgba(198, 154, 82, 0.25);
+  padding: 0.30rem 0.65rem;
+  border-radius: 9999px;
+}
+
+.as-festive-m-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.60rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #F7D59A;
+  background: rgba(198, 154, 82, 0.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(198, 154, 82, 0.45);
+  padding: 0.24rem 0.70rem;
+  border-radius: 9999px;
+  margin-bottom: 0.50rem;
+  width: fit-content;
+}
+
+.as-festive-m-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  color: #FAF7F2;
+  margin: 0 0 0.40rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.40);
+}
+
+.as-festive-m-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: #F0C77D;
+}
+
+.as-festive-m-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: #E6DFD5;
+  margin: 0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.40);
+}
+
+/* 2. Horizontally Scrollable Category Filters Bar */
+.as-festive-m-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.40rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.25rem 0.20rem 0.65rem;
+  margin-bottom: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.as-festive-m-filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.as-festive-m-tab {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.90);
+  border: 1px solid rgba(198, 154, 82, 0.28);
+  color: #5D5447;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.38rem 0.72rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.as-festive-m-tab:hover {
+  color: #29231F;
+  border-color: rgba(198, 154, 82, 0.50);
+}
+
+.as-festive-m-tab.active {
+  background: #382317;
+  border-color: #382317;
+  color: #FAF7F2;
+  box-shadow: 0 2px 8px rgba(56, 35, 23, 0.20);
+}
+
+.as-festive-m-atmo-tab {
+  color: #382317;
+  background: rgba(198, 154, 82, 0.12);
+  border-color: rgba(198, 154, 82, 0.40);
+}
+
+.as-festive-m-atmo-tab.active {
+  background: #C69A52;
+  border-color: #C69A52;
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(198, 154, 82, 0.30);
+}
+
+/* 3. Atmospheric References Dropdown Sheet (Mobile) */
+.as-festive-m-atmo-sheet {
+  background: #FFFFFF;
+  border: 1px solid rgba(198, 154, 82, 0.35);
+  border-radius: 14px;
+  padding: 0.85rem;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 8px 24px rgba(56, 35, 23, 0.08);
+  animation: asAtmoMobileFade 0.25s ease;
+}
+
+@keyframes asAtmoMobileFade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.as-festive-m-atmo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.40rem;
+  border-bottom: 1px solid rgba(198, 154, 82, 0.20);
+}
+
+.as-festive-m-atmo-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #C69A52;
+}
+
+.as-festive-m-atmo-close {
+  background: transparent;
+  border: none;
+  color: #5D5447;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.25rem;
+}
+
+.as-festive-m-atmo-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 0.50rem;
+}
+
+.as-festive-m-atmo-card {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(247, 244, 237, 0.70);
+  border: 1px solid rgba(198, 154, 82, 0.22);
+  border-radius: 8px;
+  padding: 0.40rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.as-festive-m-atmo-card:hover {
+  background: rgba(198, 154, 82, 0.15);
+  border-color: #C69A52;
+}
+
+.as-festive-m-atmo-thumb {
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.as-festive-m-atmo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.as-festive-m-atmo-role {
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #C69A52;
+}
+
+.as-festive-m-atmo-name {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #29231F;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 4. Dedicated Product Showcase Card (Mobile) */
+.as-festive-m-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 244, 236, 0.98) 100%);
+  border: 1px solid rgba(198, 154, 82, 0.34);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px -10px rgba(56, 35, 23, 0.12), 0 0 25px rgba(198, 154, 82, 0.08);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Visual Stage: ONE product at a time with authentic 4:5 aspect ratio */
+.as-festive-m-visual-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 4.75;
+  max-height: 440px;
+  background: radial-gradient(circle at 50% 40%, #FAF6EE 0%, #F3EBDD 70%, #E8DAC6 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.as-festive-m-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 46%;
+  display: block;
+  transform: scale(1.04);
+  filter: none !important;
+  -webkit-filter: none !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Secondary Bottom Return Sign */
+.as-festive-m-bottom-return {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.as-festive-m-bottom-return-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(198, 154, 82, 0.35);
+  color: #382317;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.45rem 1.15rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(56, 35, 23, 0.06);
+}
+
+.as-festive-m-bottom-return-btn:hover {
+  background: #C69A52;
+  color: #FFFFFF;
+  border-color: #C69A52;
+}
+
+/* Discreet floating badges on image */
+.as-festive-m-badge-top {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.as-festive-m-badge-pill {
+  background: rgba(250, 247, 242, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(198, 154, 82, 0.35);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.60rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #382317;
+  padding: 0.24rem 0.65rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(56, 35, 23, 0.08);
+}
+
+.as-festive-m-counter {
+  background: rgba(250, 247, 242, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(198, 154, 82, 0.35);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.98rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #29231F;
+  padding: 0.15rem 0.65rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(56, 35, 23, 0.08);
+}
+
+/* Information Area: BELOW the visual (Never covering the luminaire) */
+.as-festive-m-info-box {
+  padding: 1.15rem 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.as-festive-m-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.50rem;
+  flex-wrap: wrap;
+}
+
+.as-festive-m-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.48rem;
+  font-weight: 600;
+  line-height: 1.20;
+  color: #29231F;
+  margin: 0;
+  word-break: break-word;
+}
+
+.as-festive-m-craft-tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #C69A52;
+  background: rgba(198, 154, 82, 0.12);
+  border: 1px solid rgba(198, 154, 82, 0.32);
+  padding: 0.18rem 0.52rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.as-festive-m-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #5D5447;
+  margin: 0;
+}
+
+/* Specification Pill */
+.as-festive-m-spec-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(198, 154, 82, 0.12);
+  border: 1px solid rgba(198, 154, 82, 0.28);
+  padding: 0.30rem 0.75rem;
+  border-radius: 9999px;
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.as-spec-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C69A52;
+  flex-shrink: 0;
+}
+
+.as-festive-m-spec-pill .as-spec-pill-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #382317;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Action Buttons: Inspect Specs + WhatsApp */
+.as-festive-m-actions {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.40rem;
+  width: 100%;
+}
+
+.as-festive-m-actions > .email-enquiry-wrap { flex: 1 1 140px; }
+
+.as-festive-m-btn-specs {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.40rem;
+  min-height: 42px;
+  background: rgba(56, 35, 23, 0.05);
+  border: 1px solid rgba(198, 154, 82, 0.38);
+  color: #382317;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.as-festive-m-btn-specs:hover {
+  background: #C69A52;
+  color: #FFFFFF;
+  border-color: #C69A52;
+}
+
+.as-festive-m-btn-wa {
+  flex: 1.15;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 42px;
+  background: #1E6B38;
+  border: 1px solid #278546;
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 3px 12px rgba(30, 107, 56, 0.22);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.as-festive-m-btn-wa:hover {
+  background: #248043;
+}
+
+/* 5. Mobile Navigation: Stepper & 10-Thumbnail Scrollable Rail */
+.as-festive-m-nav-cluster {
+  padding: 0 1.15rem 1.15rem;
+  background: transparent;
+  border-top: 1px solid rgba(198, 154, 82, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-sizing: border-box;
+}
+
+.as-festive-m-stepper-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+  width: 100%;
+}
+
+.as-festive-m-stepper-btn {
+  flex: 1;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border: 1px solid rgba(198, 154, 82, 0.32);
+  color: #382317;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(56, 35, 23, 0.05);
+  transition: all 0.2s ease;
+}
+
+.as-festive-m-stepper-btn:hover {
+  background: rgba(198, 154, 82, 0.18);
+  border-color: #C69A52;
+  color: #382317;
+}
+
+/* 10 Thumbnails Rail (Horizontally Scrollable) */
+.as-festive-m-thumbs-rail {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.40rem 0.20rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.as-festive-m-thumbs-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.as-festive-m-thumb-btn {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 3px;
+  border-radius: 8px;
+  border: 1.5px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.as-festive-m-thumb-btn:hover {
+  border-color: rgba(198, 154, 82, 0.60);
+  background: rgba(198, 154, 82, 0.15);
+}
+
+.as-festive-m-thumb-btn.active {
+  border-color: #C69A52;
+  background: rgba(198, 154, 82, 0.22);
+  box-shadow: 0 0 0 2px #C69A52;
+}
+
+.as-festive-m-thumb-btn.dimmed {
+  opacity: 0.32;
+}
+
+.as-m-thumb-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+}
+
+.as-m-thumb-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.56rem;
+  font-weight: 700;
+  color: #5D5447;
+  transition: color 0.2s ease;
+}
+
+.as-festive-m-thumb-btn.active .as-m-thumb-label {
+  color: #C69A52;
+  font-weight: 800;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   EXTRA SMALL SCREEN ADAPTATION (320px–360px)
+   ────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 360px) {
+  .as-festive-m-container {
+    padding: 0.5rem 0.65rem 1.25rem;
+  }
+
+  .as-festive-m-title {
+    font-size: 1.45rem;
+  }
+
+  .as-festive-m-name {
+    font-size: 1.30rem;
+  }
+
+  .as-festive-m-btn-specs,
+  .as-festive-m-btn-wa {
+    font-size: 0.68rem;
+    min-height: 38px;
+    padding: 0.35rem 0.50rem;
+  }
+
+  .as-m-thumb-img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   REDUCED MOTION PREFERENCE
+   ────────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .as-festive-outer-stage,
+  .as-festive-3d-stage-viewport,
+  .as-btn-explore-festive,
+  .as-hud-return-btn,
+  .as-hud-tab,
+  .as-hud-thumb-btn,
+  .as-hud-stepper-btn,
+  .as-festive-m-tab,
+  .as-festive-m-stepper-btn,
+  .as-festive-m-thumb-btn {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
