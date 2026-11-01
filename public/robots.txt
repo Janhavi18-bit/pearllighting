@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://pearllighting.vercel.app/sitemap.xml
+Sitemap: https://pearllightingstudio.com/sitemap.xml
