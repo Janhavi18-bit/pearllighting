@@ -392,14 +392,14 @@ Notes: ${consultForm.notes || 'Inquiring about the festive lighting collection.'
               <span>COLLECTION 02 · CELEBRATION REPERTOIRE</span>
             </div>
 
-            <h1 className="fl-hero-title">Festive Collection</h1>
+            <h1 className="fl-hero-title">Decorative &amp; Diwali Lights</h1>
 
             <p className="fl-hero-subtitle-highlight">
               Discover lights that bring every celebration to life.
             </p>
 
             <p className="fl-hero-description">
-              Handcrafted star cascades, traditional brass diya silhouettes, optical crystal bubbles, and artisanal filament fixtures—curated to infuse festive evenings with warm golden radiance.
+              Handcrafted star cascades, traditional brass diya silhouettes, optical crystal bubbles, and artisanal filament fixtures—curated by Pearl Lighting in Kalbadevi, Mumbai to infuse festive evenings with warm golden radiance.
             </p>
 
             <div className="fl-hero-badges-row">
@@ -910,7 +910,7 @@ Notes: ${consultForm.notes || 'Inquiring about the festive lighting collection.'
                 className="fl-footer-logo"
               />
               <p className="fl-footer-brand-desc">
-                {STUDIO_INFO.brandName} — {STUDIO_INFO.parentCompany}
+                {STUDIO_INFO.brandName}
               </p>
               <p className="fl-footer-tagline">“{STUDIO_INFO.tagline}”</p>
               <p className="fl-footer-atelier-origin">
@@ -961,8 +961,6 @@ Notes: ${consultForm.notes || 'Inquiring about the festive lighting collection.'
               <address className="fl-footer-address">
                 <strong>{STUDIO_INFO.brandName}</strong>
                 <br />
-                {STUDIO_INFO.parentCompany}
-                <br />
                 {STUDIO_INFO.address.line1}
                 <br />
                 {STUDIO_INFO.address.line2}
@@ -970,6 +968,26 @@ Notes: ${consultForm.notes || 'Inquiring about the festive lighting collection.'
                 {STUDIO_INFO.address.city} – {STUDIO_INFO.address.pincode},{' '}
                 {STUDIO_INFO.address.state}
               </address>
+              <a
+                href={STUDIO_INFO.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="fl-footer-map-link"
+                aria-label="Open Pearl Lighting location on Google Maps"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.35rem',
+                  fontSize: '0.82rem',
+                  color: 'var(--as-copper-accent, #C97A52)',
+                  textDecoration: 'none',
+                  marginTop: '0.55rem',
+                  fontWeight: 500
+                }}
+              >
+                <span>📍 View on Google Maps (18.943804, 72.826927)</span>
+                <span>↗</span>
+              </a>
             </div>
 
             <div className="fl-footer-links-col">
@@ -1007,7 +1025,7 @@ Notes: ${consultForm.notes || 'Inquiring about the festive lighting collection.'
 
           <div className="fl-footer-legal-bar">
             <span>
-              © {new Date().getFullYear()} {STUDIO_INFO.brandName} · {STUDIO_INFO.parentCompany}. All rights reserved.
+              © {new Date().getFullYear()} {STUDIO_INFO.brandName}. All rights reserved.
             </span>
 
             <div className="fl-footer-legal-actions">

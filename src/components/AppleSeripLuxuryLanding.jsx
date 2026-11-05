@@ -289,7 +289,7 @@ Notes: ${formState.notes || 'Inquiring about lighting specifications & catalogue
           <a href="#top" className="as-brand" aria-label="Pearl Lighting Home">
             <img
               src="/images/logo/pearl-lightings-logo-transparent.png"
-              alt="Pearl Lightings — Parth Enterprises"
+              alt="Pearl Lighting Logo"
               className="as-brand-logo-img"
             />
             <div className="as-brand-text">
@@ -436,22 +436,24 @@ Notes: ${formState.notes || 'Inquiring about lighting specifications & catalogue
         {/* Content art-directed directly over the photograph — unified composition */}
         <div className="as-hero-stage-container">
           <div className="as-hero-stage-core">
-            {/* 1. First: Top Label */}
-            <div className="as-hero-kicker-mark as-reveal-kicker">
-              <span className="as-kicker-amber-dot"></span>
-              <span className="as-kicker-text">PEARL LIGHTING · PARTH ENTERPRISES · MUMBAI</span>
-            </div>
+            {/* Clear H1 Heading describing Pearl Lighting and its location in Kalbadevi, Mumbai */}
+            <h1 className="as-hero-cinema-heading-group">
+              <div className="as-hero-kicker-mark as-reveal-kicker">
+                <span className="as-kicker-amber-dot" aria-hidden="true"></span>
+                <span className="as-kicker-text">PEARL LIGHTING · LIGHTING SHOP IN KALBADEVI, MUMBAI</span>
+              </div>
 
-            {/* 2. Next: Main heading revealed phrase by phrase using refined text masks */}
-            <h1 className="as-hero-cinema-heading" aria-label="Sculpting Light Into Living Art.">
-              <span className="as-reveal-mask">
-                <span className="as-reveal-phrase as-phrase-1">Sculpting Light Into</span>
-              </span>{' '}
-              <span className="as-reveal-mask">
-                <span className="as-reveal-phrase as-phrase-2 as-hero-italic-word">Living</span>
-              </span>{' '}
-              <span className="as-reveal-mask">
-                <span className="as-reveal-phrase as-phrase-3 as-hero-italic-word">Art.</span>
+              <span className="as-hero-cinema-heading" aria-label="Pearl Lighting — Architectural &amp; LED Lighting Shop in Kalbadevi, Mumbai. Sculpting Light Into Living Art.">
+                <span className="as-reveal-mask">
+                  <span className="as-reveal-phrase as-phrase-1">Sculpting Light Into</span>
+                </span>{' '}
+                <span className="as-reveal-mask">
+                  <span className="as-reveal-phrase as-phrase-2 as-hero-italic-word">Living</span>
+                </span>{' '}
+                <span className="as-reveal-mask">
+                  <span className="as-reveal-phrase as-phrase-3 as-hero-italic-word">Art.</span>
+                </span>
+                <span className="as-sr-only"> — Premier Architectural &amp; LED Lighting Store in Kalbadevi, Mumbai</span>
               </span>
             </h1>
 
@@ -579,9 +581,9 @@ Notes: ${formState.notes || 'Inquiring about lighting specifications & catalogue
             <div className="as-sig-context-column">
               <div className="as-sig-context-header as-sig-anim-header">
                 <span className="as-sig-context-kicker">SPATIAL PHILOSOPHY</span>
-                <h3 className="as-sig-context-title">
+                <h2 className="as-sig-context-title">
                   Sculpting Luminance as <em>Living Architecture.</em>
-                </h3>
+                </h2>
                 <p className="as-sig-context-lead">
                   In distinguished penthouses, private villas, and curated residences across Mumbai, Pearl Lighting treats illumination not as fixtures upon a ceiling, but as the quiet emotional medium through which space lives.
                 </p>
@@ -715,7 +717,7 @@ Notes: ${formState.notes || 'Inquiring about lighting specifications & catalogue
               Precision Engineering meets <em>Artisanal Elegance.</em>
             </h2>
             <p className="as-collection-subheading">
-              Curated downlights, surface profiles, adjustable gimbals, flood luminaires, and continuous flexible contour rope lights.
+              Curated LED panel lights, deep anti-glare downlights, cylindrical surface profiles, adjustable COB gimbals, exterior flood lights, and continuous rope lights — handcrafted and curated in Kalbadevi, Mumbai.
             </p>
           </div>
 
@@ -773,7 +775,7 @@ Notes: ${formState.notes || 'Inquiring about lighting specifications & catalogue
                       <div className="as-card-media-box">
                         <img
                           src={displayImage}
-                          alt={product.name}
+                          alt={currentVariant?.alt || product.primaryImage?.alt || `${product.name} — Architectural LED Lighting by Pearl Lighting Mumbai`}
                           className="as-card-img"
                           loading="lazy"
                           style={{
@@ -850,10 +852,138 @@ Notes: ${formState.notes || 'Inquiring about lighting specifications & catalogue
       <FestiveHomepagePreview onExploreFestive={onNavigateToFestive} />
 
       {/* ====================================================================
+          6. LOCAL LIGHTING ATELIER & MUMBAI SHOWROOM
+          Natural Local SEO Section — Kalbadevi, South Mumbai
+          ==================================================================== */}
+      <section className="as-local-studio-section" id="studio" aria-label="Pearl Lighting Studio and Showroom in Kalbadevi, Mumbai">
+        <div className="as-container">
+          <div className="as-local-card">
+            {/* Header */}
+            <div className="as-local-header">
+              <div className="as-local-kicker">
+                <span className="as-kicker-amber-dot" aria-hidden="true" />
+                <span className="as-local-kicker-text">SHOWROOM &amp; ATELIER · KALBADEVI, SOUTH MUMBAI</span>
+              </div>
+              <h2 className="as-local-title">
+                Premier Lighting Shop in Mumbai &amp; <em>Kalbadevi Store.</em>
+              </h2>
+              <p className="as-local-lead">
+                Situated in Kalbadevi near Dhobi Talao in the heart of South Mumbai’s historic electrical and lighting market, Pearl Lighting has been crafting and supplying high-performance architectural luminaires and celebration lighting for over a decade.
+              </p>
+              <p className="as-local-body">
+                Whether you are an architect curating deep anti-glare downlights for a luxury residence, an interior designer seeking continuous cove rope lights, or a homeowner searching for trusted lighting shops near Mumbai, our atelier provides bespoke luminaire consultations, photometric guidance, and reliable pan-Mumbai dispatch.
+              </p>
+            </div>
+
+            {/* Service & Product Pillars Grid */}
+            <div className="as-local-pillars-grid">
+              <div className="as-local-pillar-card">
+                <span className="as-pillar-num">01</span>
+                <h3 className="as-pillar-heading">Architectural LED Lights</h3>
+                <p className="as-pillar-text">
+                  Ultra-slim panel lights and minimalist surface panel lights designed for modern Mumbai apartments, penthouses, and corporate offices.
+                </p>
+              </div>
+
+              <div className="as-local-pillar-card">
+                <span className="as-pillar-num">02</span>
+                <h3 className="as-pillar-heading">COB Lights &amp; Deep Downlights</h3>
+                <p className="as-pillar-text">
+                  Precision curve COB lights, multi-axis moveable gimbal spotlights, and anti-glare recessed downlights for high visual comfort.
+                </p>
+              </div>
+
+              <div className="as-local-pillar-card">
+                <span className="as-pillar-num">03</span>
+                <h3 className="as-pillar-heading">Rope Lights &amp; LED Flood Lights</h3>
+                <p className="as-pillar-text">
+                  Dot-free flexible LED rope lights for false ceiling coves and heavy-duty die-cast exterior flood luminaires for architectural facades across Mumbai.
+                </p>
+              </div>
+
+              <div className="as-local-pillar-card">
+                <span className="as-pillar-num">04</span>
+                <h3 className="as-pillar-heading">Decorative &amp; Diwali Lights</h3>
+                <p className="as-pillar-text">
+                  Handcrafted cascading star curtains, sacred brass diya garlands, vintage filament bulbs, and crystal bubble orbs for festive celebrations.
+                </p>
+              </div>
+            </div>
+
+            {/* Location & Contact Block */}
+            <div className="as-local-details-box">
+              <div className="as-local-address-col">
+                <span className="as-local-box-tag">SHOWROOM &amp; WORKSHOP</span>
+                <h4 className="as-local-store-name">Pearl Lighting</h4>
+                <address className="as-local-address-text">
+                  {STUDIO_INFO.address.line1}<br />
+                  {STUDIO_INFO.address.line2}<br />
+                  {STUDIO_INFO.address.city} – {STUDIO_INFO.address.pincode}, {STUDIO_INFO.address.state}, India.
+                </address>
+                <div className="as-local-coords">
+                  <span>Coordinates: <strong>18.943804° N, 72.826927° E</strong></span>
+                </div>
+                <div className="as-local-actions">
+                  <a
+                    href={STUDIO_INFO.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="as-btn-map-directions"
+                    aria-label="Open Pearl Lighting location on Google Maps"
+                  >
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Open in Google Maps</span>
+                    <span className="as-btn-arrow-icon">↗</span>
+                  </a>
+                  <a
+                    href={`https://wa.me/${STUDIO_INFO.whatsappNumber}?text=${encodeURIComponent("Hi Pearl Lighting Studio, I would like to visit your Kalbadevi showroom / enquire about lighting.")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="as-btn-local-wa"
+                    aria-label="Chat with Kalbadevi showroom on WhatsApp"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06s-1.05-.39-2-1.23c-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.43 1.03 2.6c.12.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.12-.22-.19-.47-.32"/>
+                    </svg>
+                    <span>WhatsApp Concierge</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className="as-local-contact-col">
+                <span className="as-local-box-tag">DIRECT INQUIRIES</span>
+                <div className="as-local-contact-list">
+                  <div className="as-local-contact-item">
+                    <span className="as-contact-type">Phone &amp; WhatsApp:</span>
+                    <a href={`tel:${STUDIO_INFO.phone}`} className="as-contact-val">{STUDIO_INFO.phone}</a>
+                  </div>
+                  <div className="as-local-contact-item">
+                    <span className="as-contact-type">Official Email:</span>
+                    <a href={`mailto:${STUDIO_INFO.email}`} className="as-contact-val">{STUDIO_INFO.email}</a>
+                  </div>
+                  <div className="as-local-contact-item">
+                    <span className="as-contact-type">Instagram:</span>
+                    <a href={STUDIO_INFO.instagramUrl} target="_blank" rel="noopener noreferrer" className="as-contact-val">@{STUDIO_INFO.instagram} ↗</a>
+                  </div>
+                  <div className="as-local-contact-item">
+                    <span className="as-contact-type">Service Area:</span>
+                    <span className="as-contact-val-text">Mumbai, Kalbadevi, South Mumbai, Suburbs &amp; Navi Mumbai</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================
           7. EDITORIAL FOOTER & ATELIER DETAILS
           (Featuring Real Pearl Lighting Logo & Verified Contact Info)
           ==================================================================== */}
-      <footer className="as-footer" id="studio">
+      <footer className="as-footer">
         <div className="as-footer-statement-shell">
           <div className="as-footer-statement-card">
             <div className="as-footer-eyebrow">
@@ -902,7 +1032,7 @@ Notes: ${formState.notes || 'Inquiring about lighting specifications & catalogue
                 className="as-footer-logo-img"
               />
               <p className="as-footer-brand-bio">
-                {STUDIO_INFO.brandName} — {STUDIO_INFO.parentCompany}
+                {STUDIO_INFO.brandName}
               </p>
               <p className="as-footer-brand-motto">
                 “{STUDIO_INFO.tagline}” Handcrafted illumination born in Kalbadevi, Mumbai.
@@ -937,11 +1067,20 @@ Notes: ${formState.notes || 'Inquiring about lighting specifications & catalogue
               <div className="as-footer-col-title">Studio Location</div>
               <p className="as-footer-address">
                 <strong>{STUDIO_INFO.brandName}</strong><br/>
-                {STUDIO_INFO.parentCompany}<br/>
                 {STUDIO_INFO.address.line1}<br/>
                 {STUDIO_INFO.address.line2}<br/>
                 {STUDIO_INFO.address.city} – {STUDIO_INFO.address.pincode}, {STUDIO_INFO.address.state}
               </p>
+              <a
+                href={STUDIO_INFO.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="as-footer-maps-link"
+                aria-label="Open Pearl Lighting location on Google Maps"
+              >
+                <span>📍 View on Google Maps (18.943804, 72.826927)</span>
+                <span>↗</span>
+              </a>
             </div>
 
             <div>
@@ -965,7 +1104,7 @@ Notes: ${formState.notes || 'Inquiring about lighting specifications & catalogue
 
           <div className="as-footer-legal-bar">
             <span>
-              © {new Date().getFullYear()} {STUDIO_INFO.brandName} · {STUDIO_INFO.parentCompany}. All rights reserved.
+              © {new Date().getFullYear()} {STUDIO_INFO.brandName}. All rights reserved.
             </span>
 
             <button
@@ -1068,7 +1207,7 @@ Notes: ${formState.notes || 'Inquiring about lighting specifications & catalogue
               <div className="as-sheet-img-wrap">
                 <img
                   src={modalActiveImage || inspectedProduct.image || inspectedProduct.primaryImage?.image}
-                  alt={inspectedProduct.name}
+                  alt={`${inspectedProduct.name} — Architectural & LED Lighting by Pearl Lighting Kalbadevi Mumbai`}
                   className="as-sheet-main-img"
                   style={{
                     transform: inspectedProduct.has3DSlider

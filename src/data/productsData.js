@@ -7,20 +7,25 @@
 // Verified Studio Contact Information
 export const STUDIO_INFO = {
   brandName: 'Pearl Lighting',
-  parentCompany: 'Parth Enterprises',
   tagline: 'Light Is My Life, Pearl Is My Light.',
-  phone: '+91 83290 45712',
+  phone: '+91 8329045712',
   whatsappNumber: '918329045712',
   email: 'pearlleddriver@gmail.com',
-  instagram: '@pearl_llighting',
+  instagram: 'pearl_llighting',
   instagramUrl: 'https://www.instagram.com/pearl_llighting/',
+  coordinates: {
+    latitude: 18.943804,
+    longitude: 72.826927
+  },
+  mapsUrl: 'https://www.google.com/maps?q=18.943804,72.826927',
   address: {
-    line1: '42/44 Navjeevan Wadi, Ground Floor, Room No. 1',
+    line1: '42/44 Navjeevan Wadi, Ground Floor – Room No. 1',
     line2: '4th Marin Street, Dhobi Talao, Kalbadevi',
     city: 'Mumbai',
     pincode: '400002',
     state: 'Maharashtra',
-    country: 'India'
+    country: 'India',
+    full: '42/44 Navjeevan Wadi, Ground Floor – Room No. 1, 4th Marin Street, Dhobi Talao, Kalbadevi, Mumbai – 400002'
   }
 }
 
@@ -40,74 +45,74 @@ export const architecturalProducts = [
   {
     id: 'slim-panel',
     number: '01',
-    name: 'Slim Panel Light',
-    subtitle: 'Architectural Panel Series',
-    category: 'Architectural Panel',
+    name: 'Slim Panel Lights',
+    subtitle: 'Architectural LED Panel Series · Flush Ceiling Mount',
+    category: 'LED Panel Lights',
     badge: '01 / FLUSH MOUNT',
-    description: 'Clean, low-profile illumination designed for modern interiors. Ultra-slim profile with soft diffused glow.',
+    description: 'Clean, low-profile LED panel lights designed for modern interiors in Mumbai. Ultra-slim architectural profile delivering uniform, glare-free diffused illumination with minimal recessed depth.',
     primaryImage: {
       id: 'slim-panel-round',
       label: 'Round Ambient Disc',
       image: '/images/products/slim-panel-round.png',
-      alt: 'Round Slim Panel Light'
+      alt: 'Round Slim Panel Light — Flush Mount LED Ceiling Light by Pearl Lighting Mumbai'
     },
     variants: [
       {
         id: 'round-ambient',
         label: 'Round Ambient Disc',
         image: '/images/products/slim-panel-round.png',
-        alt: 'Round Slim Panel Light',
+        alt: 'Round Slim Panel Light — Flush Mount LED Ceiling Light by Pearl Lighting Mumbai',
         note: 'Circular flush profile'
       },
       {
         id: 'square-flush',
         label: 'Square Flush Profile',
         image: '/images/products/slim-panel-square.png',
-        alt: 'Square Slim Panel Light',
+        alt: 'Square Slim Panel Light — Low Profile Recessed LED Light by Pearl Lighting Mumbai',
         note: 'Square flush-mount profile'
       }
     ],
     verifiedDetails: [
       { label: 'Profile', value: 'Ultra-slim low-profile architectural design' },
       { label: 'Mounting', value: 'Flush ceiling mount' },
-      { label: 'Light Quality', value: 'Soft diffused glare-free ambient spread' },
-      { label: 'Application', value: 'Residential, office, and hospitality corridors' }
+      { label: 'Light Quality', value: 'Soft diffused glare-free ambient spread (LED panel lights Mumbai)' },
+      { label: 'Application', value: 'Residential, office, and hospitality corridors across Mumbai' }
     ]
   },
   {
     id: 'surface-panel',
     number: '02',
-    name: 'Surface Panel Light',
-    subtitle: 'Surface Architectural Series',
-    category: 'Surface Architecture',
+    name: 'Surface Panel Lights',
+    subtitle: 'Surface Architectural Series · Direct Slab Mount',
+    category: 'Surface Panel Lights',
     badge: '02 / SURFACE MOUNT',
-    description: 'Clean, surface-mounted illumination designed for modern interiors. Minimalist cylindrical profile with direct surface installation.',
+    description: 'Minimalist cylindrical surface panel lights designed for direct ceiling installation without false ceilings. Provides smooth, consistent downward LED illumination for modern Mumbai homes and commercial spaces.',
     primaryImage: {
       id: 'surface-duo',
       label: 'Architectural Series Overview',
       image: '/images/products/surface-panel-duo.png',
-      alt: 'Surface Panel Light Architectural Series Overview'
+      alt: 'Surface Panel Lights — Modern Cylindrical Surface Mount LED Downlights by Pearl Lighting Kalbadevi Mumbai'
     },
     variants: [
       {
         id: 'surface-duo',
         label: 'Series Overview',
         image: '/images/products/surface-panel-duo.png',
-        alt: 'Surface Panel Light Architectural Series Overview',
+        alt: 'Surface Panel Lights — Duo Overview Architectural Series by Pearl Lighting',
         note: 'Duo series overview'
       },
       {
         id: 'surface-white',
         label: 'White Perspective Profile',
         image: '/images/products/surface-panel-round-white.png',
-        alt: 'Surface Panel Light White Perspective Profile',
+        alt: 'White Cylindrical Surface Panel Light — Architectural Ceiling Fixture Pearl Lighting Mumbai',
         note: 'Circular white finish'
       },
       {
         id: 'surface-black',
         label: 'Black Profile Perspective',
         image: '/images/products/surface-panel-round-black.png',
-        alt: 'Surface Panel Light Black Profile Perspective',
+        alt: 'Black Cylindrical Surface Panel Light — Studio Finish LED Downlight Pearl Lighting Mumbai',
         note: 'Circular black finish'
       }
     ],
@@ -121,44 +126,44 @@ export const architecturalProducts = [
   {
     id: 'deep-downlight',
     number: '03',
-    name: 'Deep Down Light',
-    subtitle: 'Architectural Recessed Series',
-    category: 'Recessed Downlight',
+    name: 'Deep Down Lights',
+    subtitle: 'Anti-Glare Recessed Series · Deep Baffle Beam Control',
+    category: 'Deep Down Lights',
     badge: '03 / ANTI-GLARE',
-    description: 'Precision recessed lighting designed for clean, focused illumination. Anti-glare deep recess with architectural beam control.',
+    description: 'Precision deep down lights with engineered anti-glare recessed baffles for superior optical cut-off and focused beam control. Perfect for luxury Mumbai living spaces, galleries, and bedrooms seeking visual comfort.',
     primaryImage: {
       id: 'deep-downlight-duo',
       label: 'Round & Square Series Presentation',
       image: '/images/products/deep-downlight-duo.png',
-      alt: 'Round and square Deep Down Light variant presentation'
+      alt: 'Deep Down Lights — Anti-Glare Round and Square Recessed Downlights by Pearl Lighting Kalbadevi'
     },
     variants: [
       {
         id: 'deep-duo',
         label: 'Series Presentation',
         image: '/images/products/deep-downlight-duo.png',
-        alt: 'Round and square Deep Down Light variant presentation',
+        alt: 'Deep Down Lights — Round and Square Variant Presentation Pearl Lighting',
         note: 'Round & Square duo presentation'
       },
       {
         id: 'deep-black',
         label: 'Round Studio Black',
         image: '/images/products/deep-downlight-round-black-studio.png',
-        alt: 'Round black Deep Down Light studio view',
+        alt: 'Round Matte Black Deep Down Light — Architectural Anti-Glare Luminaire Pearl Lighting Mumbai',
         note: 'Matte studio black circular profile'
       },
       {
         id: 'deep-white',
         label: 'Round White Finish',
         image: '/images/products/deep-downlight-round-white.png',
-        alt: 'Round white Deep Down Light',
+        alt: 'Round Architectural White Deep Down Light — Recessed Ceiling Fixture Pearl Lighting Mumbai',
         note: 'Architectural white circular profile'
       },
       {
         id: 'deep-square',
         label: 'Square Luminaire',
         image: '/images/products/deep-downlight-square-white.png',
-        alt: 'Square Deep Down Light',
+        alt: 'Square Architectural White Deep Down Light — Precision Recessed Luminaire Pearl Lighting Mumbai',
         note: 'Architectural white square profile'
       }
     ],
@@ -172,38 +177,38 @@ export const architecturalProducts = [
   {
     id: 'curve-cob',
     number: '04',
-    name: 'Curve COB',
-    subtitle: 'Focused Recessed Series',
-    category: 'Curved Recessed Spotlight',
+    name: 'Curve COB Lights',
+    subtitle: 'Focused Recessed Series · Organic Curved Baffle',
+    category: 'COB Lights',
     badge: '04 / CURVED BAFFLE',
     has3DSlider: true,
-    description: 'Focused architectural illumination designed for modern interiors. Sculptural curved housing that transitions organically into the ceiling.',
+    description: 'Architectural curve COB lights featuring sculptural curved housings that transition organically into ceilings. High-output COB emitter with precision reflectors for accentuating focal architectural features in Mumbai residences.',
     primaryImage: {
       id: 'curve-cob-duo',
       label: 'Architectural Finish Duo',
       image: '/images/products/curve-cob-duo.png',
-      alt: 'Curve Cob Architectural Finish Duo'
+      alt: 'Curve COB Lights — Curved Baffle Recessed Spotlight Duo by Pearl Lighting Mumbai'
     },
     variants: [
       {
         id: 'curve-duo',
         label: 'Architectural Finish Duo',
         image: '/images/products/curve-cob-duo.png',
-        alt: 'Curve Cob Architectural Finish Duo',
+        alt: 'Curve COB Lights — Dual Finish Showcase Pearl Lighting Kalbadevi',
         note: 'Dual finish showcase'
       },
       {
         id: 'curve-rose-gold',
         label: 'Reflector & Heatsink Profile',
         image: '/images/products/curve-cob-rose-gold.png',
-        alt: 'Curve Cob Reflector & Heatsink Profile',
+        alt: 'Rose Gold Reflector Curve COB Light — Premium Architectural Spotlight Pearl Lighting Mumbai',
         note: 'Rose gold reflector & rear heatsink profile'
       },
       {
         id: 'curve-white',
         label: 'Curved Baffle Perspective',
         image: '/images/products/curve-cob-white-recessed.png',
-        alt: 'Curve Cob Curved Baffle Perspective',
+        alt: 'White Recessed Curve COB Light — Seamless Baffle Ceiling Spotlight Pearl Lighting Mumbai',
         note: 'Seamless white curved baffle'
       }
     ],
@@ -217,31 +222,31 @@ export const architecturalProducts = [
   {
     id: 'moveable-cob',
     number: '05',
-    name: 'Moveable COB',
-    subtitle: 'Adjustable Gimbal Series',
-    category: 'Directional Gimbal Spotlight',
+    name: 'Moveable COB Lights',
+    subtitle: 'Adjustable Gimbal Series · 360° Multi-Axis Aiming',
+    category: 'COB Lights',
     badge: '05 / 360° GIMBAL',
     has3DSlider: true,
-    description: 'Adjustable lighting designed to direct illumination where it matters. Precision directional spotlight with multi-axis gimbal tilt.',
+    description: 'Precision moveable COB lights with multi-axis gimbal rotation and tilt mechanisms. Directs punchy, focused accent beams onto artwork, textured walls, and spatial focal points across Mumbai interiors.',
     primaryImage: {
       id: 'moveable-cob-duo',
       label: 'Dual Gimbal Angle Overview',
       image: '/images/products/moveable-cob-duo.png',
-      alt: 'Moveable COB Dual Gimbal Angle Overview'
+      alt: 'Moveable COB Lights — Adjustable Directional Gimbal Spotlight Duo by Pearl Lighting Kalbadevi'
     },
     variants: [
       {
         id: 'moveable-duo',
         label: 'Dual Gimbal Overview',
         image: '/images/products/moveable-cob-duo.png',
-        alt: 'Moveable COB Dual Gimbal Angle Overview',
+        alt: 'Moveable COB Lights — Dual Module Gimbal Spotlight Orientation Pearl Lighting',
         note: 'Dual module orientation'
       },
       {
         id: 'moveable-detail',
         label: 'Reflector & Tilt Detail',
         image: '/images/products/moveable-cob-detail.png',
-        alt: 'Moveable COB Reflector & Tilt Mechanism Detail',
+        alt: 'Moveable COB Light Reflector and Precision Tilt Mechanism Detail Pearl Lighting Mumbai',
         note: 'Precision tilt mechanism and faceted reflector'
       }
     ],
@@ -255,30 +260,30 @@ export const architecturalProducts = [
   {
     id: 'led-flood-light',
     number: '06',
-    name: 'LED Flood Light',
-    subtitle: 'Architectural Outdoor Series',
-    category: 'Outdoor Flood Luminaire',
+    name: 'LED Flood Lights',
+    subtitle: 'Architectural Outdoor Series · Heavy-Duty Facade Wash',
+    category: 'LED Flood Lights',
     badge: '06 / EXTERIOR WASH',
-    description: 'Powerful outdoor illumination designed for broad and focused coverage. Architectural exterior and facade wash.',
+    description: 'High-performance exterior LED flood lights with heavy die-cast thermal heatsinks and wide-coverage optical reflectors. Built for building facades, landscape illumination, and outdoor perimeter washes across Mumbai.',
     primaryImage: {
       id: 'flood-light-duo',
       label: 'Heatsink Architecture & Reflector Array',
       image: '/images/products/led-flood-light-duo.png',
-      alt: 'LED Flood Light Heatsink Architecture and Reflector Array'
+      alt: 'LED Flood Lights — High-Output Exterior Facade and Wall Wash Luminaires Pearl Lighting Mumbai'
     },
     variants: [
       {
         id: 'flood-duo',
         label: 'Heatsink & Reflector Array',
         image: '/images/products/led-flood-light-duo.png',
-        alt: 'LED Flood Light Heatsink Architecture and Reflector Array',
+        alt: 'LED Flood Lights — Multi-Finned Heatsink and Reflector Array Pearl Lighting Kalbadevi',
         note: 'Multi-finned heatsink and reflector array'
       },
       {
         id: 'flood-angle',
         label: 'Adjustable Mounting Perspective',
         image: '/images/products/led-flood-light-angle.png',
-        alt: 'LED Flood Light with Adjustable Mounting Bracket',
+        alt: 'LED Flood Light with Heavy-Duty Adjustable Locking Mounting Bracket Pearl Lighting Mumbai',
         note: 'Adjustable locking mounting bracket'
       }
     ],
@@ -292,59 +297,59 @@ export const architecturalProducts = [
   {
     id: 'rope-light',
     number: '07',
-    name: 'Rope Light',
-    subtitle: 'Continuous Flexible Illumination',
-    category: 'Flexible Ambient Contour',
+    name: 'Rope Lights',
+    subtitle: 'Continuous Flexible Series · Dot-Free Cove Glow',
+    category: 'Rope Lights',
     badge: '07 / CONTINUOUS GLOW',
     hasGallerySlider: true,
-    description: 'Flexible lighting designed to add continuous illumination and atmosphere across a range of spaces. Smooth, dot-free contouring.',
+    description: 'Continuous flexible LED rope lights and neon contour profiles delivering seamless, dot-free illumination. Ideal for false ceiling coves, architectural steps, facade highlights, and decorative accents throughout Mumbai.',
     primaryImage: {
       id: 'rope-light-warm-glow',
       label: 'Warm Architectural Glow Reel & Loops',
       image: '/images/products/rope-light-primary-warm.png',
-      alt: 'Pearl Lighting Rope Light Architectural Illumination'
+      alt: 'Rope Lights — Continuous Architectural Warm White LED Contour Glow by Pearl Lighting Kalbadevi'
     },
     variants: [
       {
         id: 'warm-neon-reel',
         label: 'Warm White Reel',
         image: '/images/products/rope-light-primary-warm.png',
-        alt: 'Warm White Architectural Rope Light Reel & Loops',
+        alt: 'Warm White Architectural LED Rope Light Reel and Flexible Loops Pearl Lighting Mumbai',
         note: 'Continuous 3000K warm ambient run'
       },
       {
         id: 'warm-spool',
         label: 'Warm Yellow Spool',
         image: '/images/products/rope-light-warm-spool.png',
-        alt: 'Warm Yellow LED Rope Light 50m Spool',
+        alt: 'Warm Yellow Commercial 50m Spool LED Rope Light by Pearl Lighting Kalbadevi',
         note: 'High-density commercial spool'
       },
       {
         id: 'pure-white-coil',
         label: 'Pure White Coil',
         image: '/images/products/rope-light-white-coil.png',
-        alt: 'Pure White Contour Rope Light Coil with Adapter',
+        alt: 'Pure White 6000K Architectural Contour LED Rope Light Coil Pearl Lighting Mumbai',
         note: 'Crisp 6000K architectural outline'
       },
       {
         id: 'blue-neon-reel',
         label: 'Sapphire Blue Reel',
         image: '/images/products/rope-light-blue-reel.png',
-        alt: 'Sapphire Blue Rope Light Reel & Loops',
+        alt: 'Sapphire Blue Decorative LED Rope Light Reel Pearl Lighting Mumbai',
         note: 'Vibrant blue architectural accent'
       },
       {
         id: 'blue-spiral-coil',
         label: 'Royal Blue Coil',
         image: '/images/products/rope-light-blue-coil.png',
-        alt: 'Royal Blue Spiral Rope Light Flat Coil',
+        alt: 'Royal Blue Spiral Flexible LED Rope Light Flat Coil Pearl Lighting',
         note: 'Flexible planar contour run'
       },
       {
         id: 'green-spool',
         label: 'Emerald Green Spool',
         image: '/images/products/rope-light-green-spool.png',
-        alt: 'Emerald Green LED Rope Light Commercial Spool',
+        alt: 'Emerald Green Architectural LED Rope Light Reel Pearl Lighting Mumbai',
         note: 'High-impact exterior & landscape wash'
       }
     ],

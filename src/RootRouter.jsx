@@ -186,6 +186,54 @@ export default function RootRouter() {
     }
   }, [currentRoute])
 
+  // Synchronize document metadata and canonical URL per route
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+
+    const canonicalEl = document.querySelector('link[rel="canonical"]')
+    const descEl = document.querySelector('meta[name="description"]')
+    const robotsEl = document.querySelector('meta[name="robots"]')
+    const ogTitleEl = document.querySelector('meta[property="og:title"]')
+    const ogDescEl = document.querySelector('meta[property="og:description"]')
+    const ogUrlEl = document.querySelector('meta[property="og:url"]')
+    const twTitleEl = document.querySelector('meta[name="twitter:title"]')
+    const twDescEl = document.querySelector('meta[name="twitter:description"]')
+    const twUrlEl = document.querySelector('meta[name="twitter:url"]')
+
+    let title = 'Pearl Lighting — Lighting Shop in Mumbai & Kalbadevi | LED Lights'
+    let desc = 'Pearl Lighting is a premier lighting shop in Kalbadevi, Mumbai. Explore architectural LED panel lights, COB spotlights, downlights, rope lights & Diwali lights.'
+    let url = 'https://pearllightingstudio.com/'
+
+    if (currentRoute === 'festive') {
+      title = 'Decorative & Diwali Lights in Mumbai | Festive Collection — Pearl Lighting'
+      desc = 'Discover authentic decorative and Diwali lights in Mumbai at Pearl Lighting Kalbadevi. Star curtains, diya lights, crystal strings & celebration illumination.'
+      url = 'https://pearllightingstudio.com/festive-collection'
+      if (robotsEl) robotsEl.setAttribute('content', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')
+    } else if (currentRoute === 'collage') {
+      title = 'Lighting Showcase & Collage | Pearl Lighting Mumbai'
+      desc = 'Explore the curated architectural luminaire collage by Pearl Lighting Kalbadevi, Mumbai.'
+      url = 'https://pearllightingstudio.com/collage'
+      if (robotsEl) robotsEl.setAttribute('content', 'noindex, follow')
+    } else if (currentRoute === 'dark-experience') {
+      title = 'Lighting Experience Atelier | Pearl Lighting Mumbai'
+      desc = 'Immersive architectural luminaire experience by Pearl Lighting Kalbadevi, Mumbai.'
+      url = 'https://pearllightingstudio.com/dark-experience'
+      if (robotsEl) robotsEl.setAttribute('content', 'noindex, follow')
+    } else {
+      if (robotsEl) robotsEl.setAttribute('content', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1')
+    }
+
+    document.title = title
+    if (canonicalEl) canonicalEl.setAttribute('href', url)
+    if (descEl) descEl.setAttribute('content', desc)
+    if (ogTitleEl) ogTitleEl.setAttribute('content', title)
+    if (ogDescEl) ogDescEl.setAttribute('content', desc)
+    if (ogUrlEl) ogUrlEl.setAttribute('content', url)
+    if (twTitleEl) twTitleEl.setAttribute('content', title)
+    if (twDescEl) twDescEl.setAttribute('content', desc)
+    if (twUrlEl) twUrlEl.setAttribute('content', url)
+  }, [currentRoute])
+
   const navigateToLanding = (anchor = '') => {
     if (activeRestorationCancelRef.current) {
       activeRestorationCancelRef.current()
